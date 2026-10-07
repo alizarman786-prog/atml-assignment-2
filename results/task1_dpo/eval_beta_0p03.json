@@ -1,0 +1,54 @@
+{
+  "name": "beta_0p03",
+  "loss_beta": 0.03,
+  "seed": 6304,
+  "is_base": false,
+  "sets": [
+    "pairs_standard",
+    "gen"
+  ],
+  "limit": null,
+  "decoding": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "do_sample": true,
+    "max_new_tokens": 256
+  },
+  "kl_convention": "token-level mean of (logp_policy - logp_ref) pooled over all sampled response tokens (course sampled_kl, weighted by token count); kl_seq_sum_mean = mean over responses of the summed log-ratio",
+  "max_sequence_length": 768,
+  "pairs_standard": {
+    "n_pairs": 290,
+    "beta": 0.03,
+    "dpo_loss": 0.6910049915313721,
+    "pref_accuracy": 0.6103448271751404,
+    "mean_margin": 0.14640304446220398,
+    "mean_chosen_logratio": -0.18809109926223755,
+    "mean_rejected_logratio": -0.33449414372444153,
+    "corr_margin_vs_length_diff": -0.15555123110787894,
+    "n_total_in_file": 300,
+    "n_dropped_prompt_too_long": 10
+  },
+  "gen": {
+    "n_prompts": 290,
+    "kl_token_mean": -0.00010592505163754317,
+    "kl_seq_sum_mean": -0.016068465931437396,
+    "reward": {
+      "n": 290,
+      "mean": 1.326128334834658,
+      "std": 1.1946236493296367,
+      "sem": 0.07015071615968053,
+      "median": 1.43017578125,
+      "iqr": 1.6207275390625
+    },
+    "length_tokens": {
+      "n": 290,
+      "mean": 151.69655172413792,
+      "std": 104.69043667556672,
+      "sem": 6.147634120571644,
+      "median": 168.0,
+      "iqr": 210.75
+    },
+    "frac_truncated_at_cap": 0.4413793103448276
+  },
+  "eval_wall_clock_s": 563.3431148529053
+}
