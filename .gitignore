@@ -28,3 +28,7 @@ data/*
 # Misc
 *.zip
 .DS_Store
+
+# Extra safety for model weights
+*.safetensors
+*.bin
