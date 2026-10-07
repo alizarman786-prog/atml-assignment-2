@@ -1,0 +1,142 @@
+{
+  "pairs": {
+    "length_matched": {
+      "n": 80,
+      "acc_standard": 0.5625,
+      "acc_balanced": 0.6125,
+      "acc_diff_balanced_minus_standard": {
+        "mean_diff": 0.05,
+        "se": 0.053070290146206386,
+        "z": 0.942146723943889,
+        "n": 80
+      },
+      "mean_margin_standard": 0.20071472823619843,
+      "mean_margin_balanced": 0.36118035241961477
+    },
+    "preferred_longer": {
+      "n": 78,
+      "acc_standard": 0.46153846153846156,
+      "acc_balanced": 0.4230769230769231,
+      "acc_diff_balanced_minus_standard": {
+        "mean_diff": -0.038461538461538464,
+        "se": 0.033856898969457754,
+        "z": -1.1360029900031468,
+        "n": 78
+      },
+      "mean_margin_standard": -0.07077080164200221,
+      "mean_margin_balanced": -0.47516465798402446
+    },
+    "rejected_longer": {
+      "n": 79,
+      "acc_standard": 0.6835443037974683,
+      "acc_balanced": 0.7848101265822784,
+      "acc_diff_balanced_minus_standard": {
+        "mean_diff": 0.10126582278481013,
+        "se": 0.0341585773889591,
+        "z": 2.964579631982618,
+        "n": 79
+      },
+      "mean_margin_standard": 0.6665741718268092,
+      "mean_margin_balanced": 1.4837206436108938
+    },
+    "ALL": {
+      "n": 237,
+      "acc_standard": 0.569620253164557,
+      "acc_balanced": 0.6075949367088608,
+      "acc_diff_balanced_minus_standard": {
+        "mean_diff": 0.0379746835443038,
+        "se": 0.02416385009545653,
+        "z": 1.5715493762082264,
+        "n": 237
+      },
+      "mean_margin_standard": 0.26665154137188873,
+      "mean_margin_balanced": 0.4601076612492654
+    }
+  },
+  "corr_margin_vs_lengthdiff_standard": -0.17313836210519956,
+  "corr_chosen_logratio_vs_tokens_standard": -0.17443204461115006,
+  "corr_rejected_logratio_vs_tokens_standard": -0.22344354876236627,
+  "corr_margin_vs_lengthdiff_balanced": -0.35385275240826086,
+  "corr_chosen_logratio_vs_tokens_balanced": -0.3749375984198469,
+  "corr_rejected_logratio_vs_tokens_balanced": -0.3659108709305424,
+  "gen": {
+    "base": {
+      "reward_mean": 1.2844375610351562,
+      "reward_sem": 0.07165158793478442,
+      "len_mean": 152.36206896551724,
+      "len_std": 105.11744927001075,
+      "frac_truncated": 0.4379310344827586
+    },
+    "standard": {
+      "reward_mean": 1.347173914416083,
+      "reward_sem": 0.07126818204577473,
+      "len_mean": 153.19310344827585,
+      "len_std": 105.0170061398179,
+      "frac_truncated": 0.4379310344827586
+    },
+    "length_balanced": {
+      "reward_mean": 1.3148283662467168,
+      "reward_sem": 0.06819759232616486,
+      "len_mean": 152.70689655172413,
+      "len_std": 103.91479218724346,
+      "frac_truncated": 0.42758620689655175
+    },
+    "paired_vs_base": {
+      "reward": {
+        "mean_diff": 0.03039080521156048,
+        "se": 0.04714455207528338,
+        "z": 0.6446302674173366,
+        "n": 290
+      },
+      "length": {
+        "mean_diff": 0.3448275862068966,
+        "se": 1.8253067215201195,
+        "z": 0.1889148723014198,
+        "n": 290
+      }
+    },
+    "paired_vs_standard": {
+      "reward": {
+        "mean_diff": -0.032345548169366245,
+        "se": 0.03857926633856299,
+        "z": -0.8384179182027197,
+        "n": 290
+      },
+      "length": {
+        "mean_diff": -0.4862068965517241,
+        "se": 1.4516033983337202,
+        "z": -0.33494472189155505,
+        "n": 290
+      }
+    }
+  },
+  "wordlimit": {
+    "base": {
+      "compliance": 0.5625,
+      "words_mean": 39.8625,
+      "tokens_mean": 46.7125
+    },
+    "standard": {
+      "compliance": 0.5625,
+      "words_mean": 39.4125,
+      "tokens_mean": 46.2875
+    },
+    "length_balanced": {
+      "compliance": 0.6,
+      "words_mean": 38.2,
+      "tokens_mean": 44.9125
+    },
+    "paired_vs_base": {
+      "mean_diff": 0.0375,
+      "se": 0.0485346998405017,
+      "z": 0.772643080584309,
+      "n": 80
+    },
+    "paired_vs_standard": {
+      "mean_diff": 0.0375,
+      "se": 0.04853469984050169,
+      "z": 0.7726430805843091,
+      "n": 80
+    }
+  }
+}
