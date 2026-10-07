@@ -1,0 +1,17 @@
+{
+  "run_name": "beta_0p10",
+  "beta": 0.1,
+  "dataset": "data/dpo_standard_train.jsonl",
+  "n_examples": 600,
+  "max_examples": 600,
+  "steps": 38,
+  "total_steps": 38,
+  "batch_size": 2,
+  "grad_accum_steps": 8,
+  "learning_rate": 2e-05,
+  "seed": 6304,
+  "epochs": 1,
+  "wall_clock_s_this_session": 560.0457265377045,
+  "peak_vram_gb": 6.248450756072998,
+  "output": "/content/ATML-PA2-LLM-PostTraining/outputs/task1_dpo/beta_0p10"
+}
