@@ -218,3 +218,21 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# course assets and large artifacts (do not commit)
+checkpoints/
+cached/
+outputs/
+wandb/
+*.pt
+*.pth
+*.safetensors
+*.bin
+
+# Colab / notebook clutter
+.ipynb_checkpoints/
+
+# downloaded course data (keep only the tracked starter files)
+data/*
+!data/README.md
+!data/word_limit_prompts.jsonl
