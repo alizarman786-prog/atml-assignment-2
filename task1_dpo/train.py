@@ -38,6 +38,10 @@ def prepare_dpo_run(config_path: str, dataset_path: str | None = None, beta: flo
     set_seed(int(cfg["seed"]))
     path = dataset_path or cfg["paths"]["dpo_standard_train"]
     rows = read_jsonl(path)
+    from task1_dpo.filtering import filter_fitting, log_dropped
+    _tok = load_tokenizer(cfg["base_model"])
+    rows, dropped = filter_fitting(_tok, rows, int(cfg["max_sequence_length"]))
+    log_dropped(cfg, path, dropped, len(rows))
     if max_examples is not None:
         rows = rows[: int(max_examples)]
 
@@ -71,11 +75,8 @@ def run_training(config_path: str, run_name: str, dataset_path: str | None = Non
     output = repo_path(output_path or cfg["standard_output"])
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    raise NotImplementedError(
-        "TODO(student): implement the DPO optimization loop, logging, gradient accumulation, "
-        "reference-policy computation, and checkpoint saving. Validate task1_dpo.dpo.dpo_loss "
-        "against the manual before trusting results."
-    )
+    from task1_dpo.dpo_loop import optimize
+    return optimize(bundle, output, run_name, dataset_path or cfg["paths"]["dpo_standard_train"], max_examples)
 
 
 def main():
