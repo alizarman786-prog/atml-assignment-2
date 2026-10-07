@@ -1,0 +1,18 @@
+{
+  "dataset": "data/dpo_length_stratified_eval.jsonl",
+  "max_sequence_length": 768,
+  "rule": "prompt token length >= max_sequence_length",
+  "n_dropped": 9,
+  "n_kept": 237,
+  "dropped_row_indices": [
+    6,
+    7,
+    20,
+    22,
+    57,
+    76,
+    82,
+    144,
+    209
+  ]
+}

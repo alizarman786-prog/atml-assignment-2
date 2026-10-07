@@ -1,0 +1,19 @@
+{
+  "dataset": "data/dpo_standard_eval.jsonl",
+  "max_sequence_length": 768,
+  "rule": "prompt token length >= max_sequence_length",
+  "n_dropped": 10,
+  "n_kept": 290,
+  "dropped_row_indices": [
+    32,
+    60,
+    71,
+    103,
+    174,
+    184,
+    239,
+    240,
+    254,
+    284
+  ]
+}

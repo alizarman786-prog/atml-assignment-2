@@ -1,0 +1,76 @@
+{
+  "name": "base",
+  "loss_beta": 0.1,
+  "seed": 6304,
+  "is_base": true,
+  "sets": [
+    "gen",
+    "wordlimit"
+  ],
+  "limit": null,
+  "decoding": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "do_sample": true,
+    "max_new_tokens": 256
+  },
+  "kl_convention": "token-level mean of (logp_policy - logp_ref) pooled over all sampled response tokens (course sampled_kl, weighted by token count); kl_seq_sum_mean = mean over responses of the summed log-ratio",
+  "max_sequence_length": 768,
+  "gen": {
+    "n_prompts": 290,
+    "kl_token_mean": 0.0,
+    "kl_seq_sum_mean": 0.0,
+    "reward": {
+      "n": 290,
+      "mean": 1.2844375610351562,
+      "std": 1.2201825746735946,
+      "sem": 0.07165158793478442,
+      "median": 1.40234375,
+      "iqr": 1.656982421875
+    },
+    "length_tokens": {
+      "n": 290,
+      "mean": 152.36206896551724,
+      "std": 105.11744927001078,
+      "sem": 6.172709163516143,
+      "median": 181.5,
+      "iqr": 212.0
+    },
+    "frac_truncated_at_cap": 0.4379310344827586
+  },
+  "wordlimit": {
+    "n_prompts": 10,
+    "samples_per_prompt": 8,
+    "n_prompts_with_parsed_limit": 10,
+    "compliance_rate": 0.5625,
+    "per_prompt_compliance": {
+      "wl01": 0.875,
+      "wl02": 0.25,
+      "wl03": 1.0,
+      "wl04": 0.375,
+      "wl05": 0.625,
+      "wl06": 0.875,
+      "wl07": 0.0,
+      "wl08": 0.75,
+      "wl09": 0.875,
+      "wl10": 0.0
+    },
+    "words": {
+      "n": 80,
+      "mean": 39.8625,
+      "std": 20.41266903082557,
+      "sem": 2.282205777756536,
+      "median": 31.0,
+      "iqr": 20.25
+    },
+    "length_tokens": {
+      "n": 80,
+      "mean": 46.7125,
+      "std": 22.67725886478022,
+      "sem": 2.535394618250414,
+      "median": 37.5,
+      "iqr": 25.75
+    }
+  },
+  "eval_wall_clock_s": 381.8904311656952
+}
