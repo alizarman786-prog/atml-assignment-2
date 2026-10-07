@@ -32,3 +32,6 @@ data/*
 # Extra safety for model weights
 *.safetensors
 *.bin
+
+# outputs may be a symlink to Drive
+outputs
