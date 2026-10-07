@@ -1,0 +1,17 @@
+{
+  "run_name": "standard",
+  "beta": 0.1,
+  "dataset": "data/dpo_standard_train.jsonl",
+  "n_examples": 1446,
+  "max_examples": null,
+  "steps": 91,
+  "total_steps": 91,
+  "batch_size": 2,
+  "grad_accum_steps": 8,
+  "learning_rate": 2e-05,
+  "seed": 6304,
+  "epochs": 1,
+  "wall_clock_s_this_session": 1359.2124438285828,
+  "peak_vram_gb": 5.973331451416016,
+  "output": "/content/ATML-PA2-LLM-PostTraining/outputs/task1_dpo/standard"
+}
