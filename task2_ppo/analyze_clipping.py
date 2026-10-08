@@ -136,7 +136,7 @@ def main():
     print("Cached PPO rollouts:", len(cache), "| eps values:", eps_list)
 
     tok = load_tokenizer(cfg["base_model"])
-    pool = read_jsonl(cfg["paths"]["rl_prompt_train"])
+    pool = read_jsonl(cfg["paths"]["rl_prompt_train"]) + read_jsonl(cfg["paths"]["rl_prompt_eval"])  # cached rollouts come from the eval pool
     by_id = {r["prompt_id"]: r for r in pool}
     policy = load_policy(cfg, adapter_path=cfg["paths"]["ppo_midpoint_policy"], trainable=True)
     policy.eval()
