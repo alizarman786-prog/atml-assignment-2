@@ -66,7 +66,8 @@ def optimize(bundle, cfg, out, run_name, save_every=5):
                 p.data = p.data.float()
     # eval mode: no LoRA dropout, so rho == 1 at the first PPO epoch and clip fraction measures real movement
     policy.eval(); value.eval()
-    pscaler, vscaler = torch.amp.GradScaler("cuda"), torch.amp.GradScaler("cuda")
+    pscaler = torch.amp.GradScaler("cuda")
+    vscaler = torch.amp.GradScaler("cuda", init_scale=2.0 ** 10)  # critic overflowed at the default 2**16
 
     res_dir = repo_path(cfg["results_dir"]); res_dir.mkdir(parents=True, exist_ok=True)
     out.mkdir(parents=True, exist_ok=True)
@@ -121,7 +122,7 @@ def optimize(bundle, cfg, out, run_name, save_every=5):
             ev = float(1 - (rv - vv).var() / rv.var().clamp_min(1e-8)) if rv.numel() > 1 else float("nan")
             vcorr = float(torch.corrcoef(torch.stack([rv, vv]))[0, 1]) if rv.numel() > 1 else float("nan")
 
-        pl, vl, pgn, vgn, cf = [], [], [], [], []
+        pl, vl, pgn, vgn, cf, vskip = [], [], [], [], [], []
         ent0 = None
         for e in range(epochs):
             new_lp, ent = token_logps(policy, seq, attn, pw, resp, entropy=(e == 0))
@@ -142,7 +143,7 @@ def optimize(bundle, cfg, out, run_name, save_every=5):
             vscaler.scale(vcoef * vloss).backward()
             vscaler.unscale_(vopt)
             vgn.append(float(torch.nn.utils.clip_grad_norm_(trainable_parameters(value), clip_norm)))
-            vscaler.step(vopt); vscaler.update()
+            _b = vscaler.get_scale(); vscaler.step(vopt); vscaler.update(); vskip.append(vscaler.get_scale() < _b)
             vl.append(float(vloss.detach()))
             del new_v, vloss
 
@@ -153,7 +154,7 @@ def optimize(bundle, cfg, out, run_name, save_every=5):
                    value_loss_first_epoch=vl[0], grad_norm_policy=float(np.mean(pgn)), grad_norm_value=float(np.mean(vgn)),
                    clip_fraction=float(np.mean(cf)), clip_fraction_last_epoch=cf[-1],
                    response_len=float(rmask.sum(-1).mean()), value_mean=float(old_v[m].mean()), return_mean=float(ret[m].mean()),
-                   value_corr=vcorr, value_explained_var=ev, kl_beta=beta, clip_eps=eps,
+                   value_corr=vcorr, value_scale=vscaler.get_scale(), value_skipped_steps=int(sum(vskip)), value_explained_var=ev, kl_beta=beta, clip_eps=eps,
                    update_s=time.time() - t0, elapsed_s=elapsed_prev + time.time() - t_start,
                    peak_vram_gb=torch.cuda.max_memory_allocated() / 2**30)
         with log_path.open("a") as f:
