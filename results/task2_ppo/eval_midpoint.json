@@ -1,0 +1,50 @@
+{
+  "name": "midpoint",
+  "n_prompts": 100,
+  "seed": 6304,
+  "max_new_tokens": 768,
+  "max_prompt_length": 256,
+  "missing_eos_penalty": 1.0,
+  "decoding": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "do_sample": true
+  },
+  "kl_convention": "token-level pooled mean of (logp_policy - logp_ref) over sampled response tokens; reference = base model (adapter disabled); kl_seq_sum = per-response summed log-ratio",
+  "kl_token_mean": -3.4938865856891e-05,
+  "kl_seq_sum": {
+    "n": 100,
+    "mean": -0.010373698661569506,
+    "std": 0.0794952062905538,
+    "sem": 0.00794952062905538,
+    "median": -0.005986444652080536,
+    "iqr": 0.06942865531891584
+  },
+  "entropy_token_mean": 1.0348484876660458,
+  "reward_raw": {
+    "n": 100,
+    "mean": 1.72328369140625,
+    "std": 1.2904785189258103,
+    "sem": 0.12904785189258103,
+    "median": 1.90234375,
+    "iqr": 1.570068359375
+  },
+  "reward_effective": {
+    "n": 100,
+    "mean": 1.60328369140625,
+    "std": 1.3213026328042405,
+    "sem": 0.13213026328042404,
+    "median": 1.853515625,
+    "iqr": 1.91650390625
+  },
+  "length_tokens": {
+    "n": 100,
+    "mean": 296.91,
+    "std": 259.25367223176715,
+    "sem": 25.925367223176714,
+    "median": 256.0,
+    "iqr": 398.75
+  },
+  "frac_truncated_at_cap": 0.12,
+  "eval_wall_clock_s": 335.7679386138916
+}
