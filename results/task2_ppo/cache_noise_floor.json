@@ -1,0 +1,13 @@
+{
+ "description": "mean |logp_recomputed - logp_cached| per response token, midpoint policy, 32 cached rollouts",
+ "vs_cache": {
+  "mb1": 0.0258,
+  "mb2": 0.0258,
+  "mb4": 0.02578
+ },
+ "between_own_runs": {
+  "mb1_mb2": 0.00147,
+  "mb2_mb4": 0.0023
+ },
+ "note": "includes the 1 row the clipping study dropped (>0.1 tolerance); study value over 31 rows is 0.0167 mean |ratio-1| at step 0"
+}
