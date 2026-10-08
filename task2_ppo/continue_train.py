@@ -73,12 +73,8 @@ def run_ppo(config_path: str, output: str | None = None, updates: int | None = N
     out = repo_path(output or cfg["output"])
     out.parent.mkdir(parents=True, exist_ok=True)
 
-    raise NotImplementedError(
-        "TODO(student): implement the 20-update PPO continuation from the supplied midpoint. "
-        "Your loop must collect on-policy rollouts, compute old/reference log-probs, learned reward, "
-        "KL-shaped rewards, GAE/returns, policy/value losses, clipping diagnostics, entropy, gradient norms, "
-        "response length, wall-clock time, and peak VRAM. Validate task2_ppo.ppo before running experiments."
-    )
+    from task2_ppo.ppo_loop import optimize
+    return optimize(bundle, cfg, out, run_name)
 
 
 def main():
