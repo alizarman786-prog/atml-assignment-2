@@ -40,12 +40,8 @@ def run_grpo(config_path: str, output: str | None = None, updates: int | None = 
     out = repo_path(output or cfg["output"])
     out.parent.mkdir(parents=True, exist_ok=True)
 
-    raise NotImplementedError(
-        "TODO(student): implement the GRPO rollout/update loop from the supplied midpoint. Generate K completions per prompt, "
-        "mask max-length completions when configured, compute within-prompt relative advantages, apply the clipped objective, "
-        "log reward/KL/group reward std/uninformative-group fraction/entropy/length/gradient norm, and save the adapter. "
-        "Validate task3_grpo.grpo before running experiments."
-    )
+    from task3_grpo.grpo_loop import optimize
+    return optimize(bundle, cfg, out, run_name, loss_type)
 
 
 def main():
