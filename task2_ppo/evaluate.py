@@ -51,8 +51,14 @@ def main():
         if args.sync_dir:
             shutil.copytree(res, args.sync_dir, dirs_exist_ok=True)
 
-    print(f"\n{'run':14s} {'reward_eff':>16s} {'reward_raw':>10s} {'KL/token':>9s} {'entropy':>8s} {'len mean±sd':>14s} {'trunc':>6s}")
+    header = f"{'run':14s} {'reward_eff':>16s} {'reward_raw':>10s} {'KL/token':>9s} {'entropy':>8s} {'len':>14s} {'trunc':>6s}"
+    print("\n" + header)
     for name, _ in runs:
         r = json.load(open(res / f"eval_{name}.json"))
-        print(f"{name:14s} {r['reward_effective']['mean']:7.3f}±{r['reward_effective']['sem']:.3f} {r['reward_raw']['mean']:10.3f} "
-              f"{r['kl_token_mean']:9.5f} {r['entropy_token_mean']:8.3f}
+        re_, rr, ln = r["reward_effective"], r["reward_raw"], r["length_tokens"]
+        print(f"{name:14s} {re_['mean']:7.3f}+-{re_['sem']:.3f} {rr['mean']:10.3f} {r['kl_token_mean']:9.5f} "
+              f"{r['entropy_token_mean']:8.3f} {ln['mean']:6.1f}+-{ln['std']:5.1f} {r['frac_truncated_at_cap']:6.3f}")
+
+
+if __name__ == "__main__":
+    main()
