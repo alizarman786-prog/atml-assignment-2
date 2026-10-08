@@ -1,0 +1,25 @@
+{
+  "run_name": "fork_grpo",
+  "loss_type": "grpo",
+  "updates": 8,
+  "num_generations": 4,
+  "prompts_per_update": 1,
+  "seed": 6304,
+  "learning_rate": 5e-06,
+  "prompt_indices": [
+    1018,
+    228,
+    516,
+    415,
+    54,
+    291,
+    1163,
+    824
+  ],
+  "wall_clock_s": 151.70299983024597,
+  "peak_vram_gb_this_session": 8.321527481079102,
+  "gpu": "Tesla T4",
+  "midpoint_policy": "checkpoints/grpo_midpoint_policy",
+  "output": "/kaggle/working/atml-assignment-2/outputs/task3_grpo/fork_grpo",
+  "note": "LoRA dropout set to 0; reference = base model (adapter disabled); truncated completions masked"
+}
