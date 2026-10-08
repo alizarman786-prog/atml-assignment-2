@@ -1,0 +1,30 @@
+{
+ "fork_grpo": {
+  "n_completions": 32,
+  "n_masked": 8,
+  "mean_len": 274.0,
+  "weight_share_longer_half": 0.26713257412925884,
+  "mean_weight_short_half": 0.9367696046828433,
+  "mean_weight_long_half": 0.3414555853231664,
+  "corr_len_weight": -0.041581610551555556,
+  "mean_policy_term": -0.013262666761875121,
+  "mean_grad_norm": 0.19464892381802137,
+  "mean_reward": 1.4424591064453125,
+  "mean_kl": 1.0365957564317794e-05,
+  "mean_response_len": 274.0
+ },
+ "fork_dr_grpo": {
+  "n_completions": 32,
+  "n_masked": 8,
+  "mean_len": 280.5,
+  "weight_share_longer_half": 0.5228735700794621,
+  "mean_weight_short_half": 0.23464086965753242,
+  "mean_weight_long_half": 0.25713836314793226,
+  "corr_len_weight": 0.6627834155319409,
+  "mean_policy_term": -0.023845802526920874,
+  "mean_grad_norm": 0.050972290453500754,
+  "mean_reward": 1.5692787170410156,
+  "mean_kl": 1.0332999977435971e-05,
+  "mean_response_len": 280.5
+ }
+}
