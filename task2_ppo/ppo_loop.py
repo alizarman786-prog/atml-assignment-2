@@ -99,7 +99,8 @@ def optimize(bundle, cfg, out, run_name, save_every=5):
                                top_p=float(gen["top_p"]), do_sample=bool(gen["do_sample"]))
         finally:
             policy.config.use_cache = False
-        seq, attn, resp, rmask, pw = g["sequences"], g["attention_mask"], g["response_ids"], g["response_mask"], g["prompt_width"]
+        seq, attn, resp, rmask = (g[k].clone() for k in ("sequences", "attention_mask", "response_ids", "response_mask"))
+        pw = g["prompt_width"]  # clone: generate() ran under inference_mode; autograd cannot save those tensors
         R = resp.shape[1]
 
         with torch.no_grad():
