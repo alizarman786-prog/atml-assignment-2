@@ -28,8 +28,8 @@
     1174,
     268
   ],
-  "wall_clock_s": 398.5152187347412,
-  "peak_vram_gb_this_session": 8.329803466796875,
+  "wall_clock_s": 398.47630429267883,
+  "peak_vram_gb_this_session": 4.56517219543457,
   "gpu": "Tesla T4",
   "midpoint_policy": "checkpoints/grpo_midpoint_policy",
   "output": "/kaggle/working/atml-assignment-2/outputs/task3_grpo/standard",
