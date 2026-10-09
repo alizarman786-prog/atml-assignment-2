@@ -1,13 +1,15 @@
 {
- "description": "mean |logp_recomputed - logp_cached| per response token, midpoint policy, 32 cached rollouts",
+ "description": "mean |logp_recomputed - logp_cached| per response token, PPO midpoint policy, all cached rollouts",
+ "n_rollouts": 32,
+ "n_tokens": 8814,
+ "gpu": "Tesla T4",
  "vs_cache": {
-  "mb1": 0.0258,
-  "mb2": 0.0258,
-  "mb4": 0.02578
+  "mb1": 0.02579650469124317,
+  "mb2": 0.025804083794355392,
+  "mb4": 0.025778820738196373
  },
  "between_own_runs": {
-  "mb1_mb2": 0.00147,
-  "mb2_mb4": 0.0023
- },
- "note": "includes the 1 row the clipping study dropped (>0.1 tolerance); study value over 31 rows is 0.0167 mean |ratio-1| at step 0"
+  "mb1_mb2": 0.001469361362978816,
+  "mb2_mb4": 0.0023039078805595636
+ }
 }
