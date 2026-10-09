@@ -1,4 +1,5 @@
 from figures_common import *
+from matplotlib.ticker import MaxNLocator
 
 
 def std():
@@ -12,6 +13,7 @@ def a(ax):
     m = d[d["missing_eos"] > 0]
     ax.scatter(m["update"], m["task_reward"], color=RED, zorder=3, s=16, label="no EOS (hit 512 cap)")
     ax.set_xlabel("PPO update")
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
     ax.set_ylabel("effective terminal reward")
     ax.legend(frameon=False)
 
@@ -23,6 +25,7 @@ def b(ax):
     sk = d[d["value_skipped_steps"] > 0]
     ax.scatter(sk["update"], [0.5] * len(sk), marker="v", color=RED, label="critic step skipped (fp16 overflow)")
     ax.set_xlabel("PPO update")
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
     ax.set_ylabel("critic explained variance")
     ax.set_ylim(ax.get_ylim()[0], 5)
     ax.legend(frameon=False, loc="upper right")
@@ -37,7 +40,7 @@ def c(ax):
     ax.set_xticks(range(3))
     ax.set_xticklabels(["eps=" + e for e in eps])
     for i, v in enumerate(vals):
-        ax.text(i, v, f"{v:.4f}", ha="center", va="bottom", fontsize=7)
+        ax.text(i, v, f"{v:.4f}", ha="center", va="bottom", fontsize=5.5)
     ax.set_ylabel("affected-token fraction")
 
 
@@ -49,10 +52,10 @@ def d_(ax):
                 fmt="o", color=BLUE, capsize=2)
     ax.set_yticks(y)
     ax.set_yticklabels(names)
-    ax.set_xlabel("held-out reward, mean and 95% CI (100 prompts)")
+    ax.set_xlabel("held-out reward (mean, 95% CI)")
 
 
-fig, axes = plt.subplots(2, 2, figsize=(7.4, 5.6))
+fig, axes = plt.subplots(2, 2, figsize=(5.5, 4.0))
 run_panels([(axes[0, 0], "(a) reward per update", a), (axes[0, 1], "(b) critic quality", b),
             (axes[1, 0], "(c) clipping, cached batch", c), (axes[1, 1], "(d) held-out reward, 8 policies", d_)])
 finish(fig, "fig_task2")

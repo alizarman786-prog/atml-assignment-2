@@ -12,7 +12,7 @@ import pandas as pd
 R = Path("results")
 OUT = Path("report/figures")
 OUT.mkdir(parents=True, exist_ok=True)
-plt.rcParams.update({"font.size": 8, "axes.titlesize": 9, "axes.labelsize": 8, "legend.fontsize": 7,
+plt.rcParams.update({"font.size": 6, "axes.titlesize": 6.5, "axes.labelsize": 6, "legend.fontsize": 5.5, "xtick.labelsize": 5.5, "ytick.labelsize": 5.5, "axes.linewidth": 0.6, "lines.linewidth": 0.9, "lines.markersize": 3.2, "patch.linewidth": 0.4,
                      "axes.spines.top": False, "axes.spines.right": False, "pdf.fonttype": 42})
 BLUE, GREEN, RED, AMBER, GREY = "#2f5aa8", "#1f7a5a", "#b3321f", "#946200", "#5d6672"
 

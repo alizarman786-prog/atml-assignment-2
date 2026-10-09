@@ -12,13 +12,13 @@ def a(ax):
                 v = P[nm][src][key]
                 ax.bar(x, v, 0.9, bottom=bot, color=col, label=key if (i == 0 and j == 0) else None)
                 bot += v
-            ax.text(x, 1.02, tag, ha="center", fontsize=7)
+            ax.text(x, 1.02, tag, ha="center", fontsize=5.5)
     ax.set_xticks([i * 3 + 0.5 for i in range(4)])
     ax.set_xticklabels(labels)
     ax.set_ylim(0, 1.38)
     ax.set_yticks(np.linspace(0, 1, 6))
-    ax.set_ylabel("fraction of pairs (V verifier, J judge)")
-    ax.legend(frameon=False, loc="upper center", ncol=3, title="preference for the clean response", title_fontsize=7)
+    ax.set_ylabel("fraction of pairs")
+    ax.legend(frameon=False, loc="upper center", ncol=3, title="clean response is...", title_fontsize=5.5)
 
 
 def b(ax):
@@ -43,6 +43,6 @@ def b(ax):
     ax.legend(frameon=False, loc="upper left")
 
 
-fig, axes = plt.subplots(1, 2, figsize=(7.4, 3.0))
-run_panels([(axes[0], "(a) controlled diagnostic pairs", a), (axes[1], "(b) accuracy, strict vs lenient", b)])
+fig, axes = plt.subplots(1, 2, figsize=(5.5, 2.3))
+run_panels([(axes[0], "(a) controlled pairs (V verifier, J judge)", a), (axes[1], "(b) accuracy", b)])
 finish(fig, "fig_task5")
