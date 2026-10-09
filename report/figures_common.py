@@ -46,7 +46,7 @@ def run_panels(panels):
 
 def finish(fig, name):
     fig.tight_layout()
-    fig.savefig(OUT / (name + ".pdf"))
+    fig.savefig(OUT / (name + ".pdf"), metadata={"CreationDate": None, "ModDate": None})
     fig.savefig(OUT / (name + ".png"), dpi=200)
     plt.close(fig)
     print("saved", OUT / (name + ".pdf"))
