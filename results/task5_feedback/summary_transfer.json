@@ -1,0 +1,100 @@
+{
+ "policies": {
+  "sft": {
+   "n": 100,
+   "accuracy": 0.43,
+   "accuracy_ci95": [
+    0.3373313900052838,
+    0.5278478830413564
+   ],
+   "format_compliance": 0.56,
+   "mean_tokens": 164.0,
+   "std_tokens": 72.1003789620044,
+   "frac_truncated": 0.0,
+   "failure_no_final": 44,
+   "failure_wrong_final": 13,
+   "failure_truncated_no_final": 0
+  },
+  "rlvr": {
+   "n": 100,
+   "accuracy": 0.44,
+   "accuracy_ci95": [
+    0.34671865400968327,
+    0.537720722887437
+   ],
+   "format_compliance": 0.56,
+   "mean_tokens": 164.16,
+   "std_tokens": 72.3002605580898,
+   "frac_truncated": 0.0,
+   "failure_no_final": 44,
+   "failure_wrong_final": 12,
+   "failure_truncated_no_final": 0
+  },
+  "rlaif": {
+   "n": 100,
+   "accuracy": 0.45,
+   "accuracy_ci95": [
+    0.3561437510640346,
+    0.5475557296835656
+   ],
+   "format_compliance": 0.58,
+   "mean_tokens": 163.84,
+   "std_tokens": 71.95252643657525,
+   "frac_truncated": 0.0,
+   "failure_no_final": 42,
+   "failure_wrong_final": 13,
+   "failure_truncated_no_final": 0
+  }
+ },
+ "pairs": {
+  "rlaif_vs_sft": {
+   "n": 100,
+   "win_rate": 0.51,
+   "se": 0.009999999999999998,
+   "wins": 3,
+   "ties": 96,
+   "losses": 1,
+   "identical_pairs": 90,
+   "n_verifier_distinguishes": 2,
+   "judge_agrees_with_verifier": 1,
+   "judge_tie_on_those": 1,
+   "judge_disagrees_on_those": 0,
+   "agreement_rate": 0.5,
+   "mean_judge_s_uncached": 0.40784635543823244,
+   "n_uncached_judge_calls": 10
+  },
+  "rlvr_vs_sft": {
+   "n": 100,
+   "win_rate": 0.505,
+   "se": 0.004999999999999999,
+   "wins": 1,
+   "ties": 99,
+   "losses": 0,
+   "identical_pairs": 93,
+   "n_verifier_distinguishes": 1,
+   "judge_agrees_with_verifier": 0,
+   "judge_tie_on_those": 1,
+   "judge_disagrees_on_those": 0,
+   "agreement_rate": 0.0,
+   "mean_judge_s_uncached": 0.4465797742207845,
+   "n_uncached_judge_calls": 3
+  },
+  "rlvr_vs_rlaif": {
+   "n": 100,
+   "win_rate": 0.485,
+   "se": 0.008572330399888264,
+   "wins": 0,
+   "ties": 97,
+   "losses": 3,
+   "identical_pairs": 91,
+   "n_verifier_distinguishes": 1,
+   "judge_agrees_with_verifier": 1,
+   "judge_tie_on_those": 0,
+   "judge_disagrees_on_those": 0,
+   "agreement_rate": 1.0,
+   "mean_judge_s_uncached": 0.3534617821375529,
+   "n_uncached_judge_calls": 6
+  }
+ },
+ "verifier_seconds_per_call": 7.828129996596545e-06
+}
