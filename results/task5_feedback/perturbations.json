@@ -1,0 +1,174 @@
+{
+ "n_problems": 20,
+ "verifier_matches_expected_reward": 1.0,
+ "by_variant": {
+  "corrupt_reasoning_correct_final": {
+   "verifier": {
+    "n": 20,
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0
+   },
+   "judge_pooled": {
+    "n": 40,
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0
+   },
+   "judge_clean_first": {
+    "n": 20,
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0
+   },
+   "judge_variant_first": {
+    "n": 20,
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0
+   },
+   "judge_order_consistency": 1.0,
+   "mean_words_clean": 49.7,
+   "mean_words_variant": 49.7
+  },
+  "good_reasoning_wrong_final": {
+   "verifier": {
+    "n": 20,
+    "better": 1.0,
+    "tie": 0.0,
+    "wrong": 0.0
+   },
+   "judge_pooled": {
+    "n": 40,
+    "better": 0.075,
+    "tie": 0.925,
+    "wrong": 0.0
+   },
+   "judge_clean_first": {
+    "n": 20,
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0
+   },
+   "judge_variant_first": {
+    "n": 20,
+    "better": 0.15,
+    "tie": 0.85,
+    "wrong": 0.0
+   },
+   "judge_order_consistency": 0.85,
+   "mean_words_clean": 49.7,
+   "mean_words_variant": 49.7
+  },
+  "gold_distractor_wrong_final": {
+   "verifier": {
+    "n": 20,
+    "better": 1.0,
+    "tie": 0.0,
+    "wrong": 0.0
+   },
+   "judge_pooled": {
+    "n": 40,
+    "better": 0.2,
+    "tie": 0.75,
+    "wrong": 0.05
+   },
+   "judge_clean_first": {
+    "n": 20,
+    "better": 0.25,
+    "tie": 0.7,
+    "wrong": 0.05
+   },
+   "judge_variant_first": {
+    "n": 20,
+    "better": 0.15,
+    "tie": 0.8,
+    "wrong": 0.05
+   },
+   "judge_order_consistency": 0.7,
+   "mean_words_clean": 49.7,
+   "mean_words_variant": 17.0
+  },
+  "persuasive_filler_correct": {
+   "verifier": {
+    "n": 20,
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0
+   },
+   "judge_pooled": {
+    "n": 40,
+    "better": 0.0,
+    "tie": 0.75,
+    "wrong": 0.25
+   },
+   "judge_clean_first": {
+    "n": 20,
+    "better": 0.0,
+    "tie": 0.75,
+    "wrong": 0.25
+   },
+   "judge_variant_first": {
+    "n": 20,
+    "better": 0.0,
+    "tie": 0.75,
+    "wrong": 0.25
+   },
+   "judge_order_consistency": 1.0,
+   "mean_words_clean": 49.7,
+   "mean_words_variant": 59.7
+  }
+ },
+ "by_kind": {
+  "reasoning": {
+   "verifier": {
+    "n": 20,
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0
+   },
+   "judge_pooled": {
+    "n": 40,
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0
+   }
+  },
+  "outcome": {
+   "verifier": {
+    "n": 40,
+    "better": 1.0,
+    "tie": 0.0,
+    "wrong": 0.0
+   },
+   "judge_pooled": {
+    "n": 80,
+    "better": 0.1375,
+    "tie": 0.8375,
+    "wrong": 0.025
+   }
+  },
+  "style": {
+   "verifier": {
+    "n": 20,
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0
+   },
+   "judge_pooled": {
+    "n": 40,
+    "better": 0.0,
+    "tie": 0.75,
+    "wrong": 0.25
+   }
+  }
+ },
+ "S_reason": {
+  "verifier": 0.0,
+  "judge_pooled": 0.0
+ },
+ "S_outcome": {
+  "verifier": 1.0,
+  "judge_pooled": 0.1375
+ }
+}

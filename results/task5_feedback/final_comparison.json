@@ -1,0 +1,314 @@
+{
+ "policies": [
+  {
+   "policy": "sft",
+   "gsm_acc": 0.27,
+   "svamp_acc": 0.43,
+   "acc_drop": -0.15999999999999998,
+   "gsm_format": 0.3433333333333333,
+   "svamp_format": 0.56,
+   "gsm_tokens": 274.8566666666667,
+   "svamp_tokens": 164.0,
+   "svamp_no_final": 44,
+   "svamp_wrong_final": 13
+  },
+  {
+   "policy": "rlvr",
+   "gsm_acc": 0.3,
+   "svamp_acc": 0.44,
+   "acc_drop": -0.14,
+   "gsm_format": 0.38666666666666666,
+   "svamp_format": 0.56,
+   "gsm_tokens": 273.97,
+   "svamp_tokens": 164.16,
+   "svamp_no_final": 44,
+   "svamp_wrong_final": 12
+  },
+  {
+   "policy": "rlaif",
+   "gsm_acc": 0.2966666666666667,
+   "svamp_acc": 0.45,
+   "acc_drop": -0.15333333333333332,
+   "gsm_format": 0.36,
+   "svamp_format": 0.58,
+   "gsm_tokens": 274.69666666666666,
+   "svamp_tokens": 163.84,
+   "svamp_no_final": 42,
+   "svamp_wrong_final": 13
+  }
+ ],
+ "gsm_pairs": {
+  "rlaif_vs_sft": {
+   "n": 300,
+   "win_rate": 0.5016666666666667,
+   "se": 0.0037317622908774628,
+   "wins": 3,
+   "ties": 295,
+   "losses": 2,
+   "identical_pairs": 247,
+   "n_verifier_distinguishes": 10,
+   "judge_agrees_with_verifier": 1,
+   "judge_tie_on_those": 9,
+   "judge_disagrees_on_those": 0,
+   "agreement_rate": 0.1,
+   "mean_judge_s_uncached": 0.5029298809339415,
+   "n_uncached_judge_calls": 53
+  },
+  "rlvr_vs_sft": {
+   "n": 300,
+   "win_rate": 0.49833333333333335,
+   "se": 0.004415901471334436,
+   "wins": 3,
+   "ties": 293,
+   "losses": 4,
+   "identical_pairs": 242,
+   "n_verifier_distinguishes": 17,
+   "judge_agrees_with_verifier": 2,
+   "judge_tie_on_those": 14,
+   "judge_disagrees_on_those": 1,
+   "agreement_rate": 0.11764705882352941,
+   "mean_judge_s_uncached": 0.46997936566670734,
+   "n_uncached_judge_calls": 36
+  },
+  "rlvr_vs_rlaif": {
+   "n": 300,
+   "win_rate": 0.49833333333333335,
+   "se": 0.0028899677829858925,
+   "wins": 1,
+   "ties": 297,
+   "losses": 2,
+   "identical_pairs": 241,
+   "n_verifier_distinguishes": 11,
+   "judge_agrees_with_verifier": 1,
+   "judge_tie_on_those": 9,
+   "judge_disagrees_on_those": 1,
+   "agreement_rate": 0.09090909090909091,
+   "mean_judge_s_uncached": 0.5074171173957086,
+   "n_uncached_judge_calls": 31
+  }
+ },
+ "svamp_pairs": {
+  "rlaif_vs_sft": {
+   "n": 100,
+   "win_rate": 0.51,
+   "se": 0.009999999999999998,
+   "wins": 3,
+   "ties": 96,
+   "losses": 1,
+   "identical_pairs": 90,
+   "n_verifier_distinguishes": 2,
+   "judge_agrees_with_verifier": 1,
+   "judge_tie_on_those": 1,
+   "judge_disagrees_on_those": 0,
+   "agreement_rate": 0.5,
+   "mean_judge_s_uncached": 0.40784635543823244,
+   "n_uncached_judge_calls": 10
+  },
+  "rlvr_vs_sft": {
+   "n": 100,
+   "win_rate": 0.505,
+   "se": 0.004999999999999999,
+   "wins": 1,
+   "ties": 99,
+   "losses": 0,
+   "identical_pairs": 93,
+   "n_verifier_distinguishes": 1,
+   "judge_agrees_with_verifier": 0,
+   "judge_tie_on_those": 1,
+   "judge_disagrees_on_those": 0,
+   "agreement_rate": 0.0,
+   "mean_judge_s_uncached": 0.4465797742207845,
+   "n_uncached_judge_calls": 3
+  },
+  "rlvr_vs_rlaif": {
+   "n": 100,
+   "win_rate": 0.485,
+   "se": 0.008572330399888264,
+   "wins": 0,
+   "ties": 97,
+   "losses": 3,
+   "identical_pairs": 91,
+   "n_verifier_distinguishes": 1,
+   "judge_agrees_with_verifier": 1,
+   "judge_tie_on_those": 0,
+   "judge_disagrees_on_those": 0,
+   "agreement_rate": 1.0,
+   "mean_judge_s_uncached": 0.3534617821375529,
+   "n_uncached_judge_calls": 6
+  }
+ },
+ "perturbations": {
+  "n_problems": 20,
+  "verifier_matches_expected_reward": 1.0,
+  "by_variant": {
+   "corrupt_reasoning_correct_final": {
+    "verifier": {
+     "n": 20,
+     "better": 0.0,
+     "tie": 1.0,
+     "wrong": 0.0
+    },
+    "judge_pooled": {
+     "n": 40,
+     "better": 0.0,
+     "tie": 1.0,
+     "wrong": 0.0
+    },
+    "judge_clean_first": {
+     "n": 20,
+     "better": 0.0,
+     "tie": 1.0,
+     "wrong": 0.0
+    },
+    "judge_variant_first": {
+     "n": 20,
+     "better": 0.0,
+     "tie": 1.0,
+     "wrong": 0.0
+    },
+    "judge_order_consistency": 1.0,
+    "mean_words_clean": 49.7,
+    "mean_words_variant": 49.7
+   },
+   "good_reasoning_wrong_final": {
+    "verifier": {
+     "n": 20,
+     "better": 1.0,
+     "tie": 0.0,
+     "wrong": 0.0
+    },
+    "judge_pooled": {
+     "n": 40,
+     "better": 0.075,
+     "tie": 0.925,
+     "wrong": 0.0
+    },
+    "judge_clean_first": {
+     "n": 20,
+     "better": 0.0,
+     "tie": 1.0,
+     "wrong": 0.0
+    },
+    "judge_variant_first": {
+     "n": 20,
+     "better": 0.15,
+     "tie": 0.85,
+     "wrong": 0.0
+    },
+    "judge_order_consistency": 0.85,
+    "mean_words_clean": 49.7,
+    "mean_words_variant": 49.7
+   },
+   "gold_distractor_wrong_final": {
+    "verifier": {
+     "n": 20,
+     "better": 1.0,
+     "tie": 0.0,
+     "wrong": 0.0
+    },
+    "judge_pooled": {
+     "n": 40,
+     "better": 0.2,
+     "tie": 0.75,
+     "wrong": 0.05
+    },
+    "judge_clean_first": {
+     "n": 20,
+     "better": 0.25,
+     "tie": 0.7,
+     "wrong": 0.05
+    },
+    "judge_variant_first": {
+     "n": 20,
+     "better": 0.15,
+     "tie": 0.8,
+     "wrong": 0.05
+    },
+    "judge_order_consistency": 0.7,
+    "mean_words_clean": 49.7,
+    "mean_words_variant": 17.0
+   },
+   "persuasive_filler_correct": {
+    "verifier": {
+     "n": 20,
+     "better": 0.0,
+     "tie": 1.0,
+     "wrong": 0.0
+    },
+    "judge_pooled": {
+     "n": 40,
+     "better": 0.0,
+     "tie": 0.75,
+     "wrong": 0.25
+    },
+    "judge_clean_first": {
+     "n": 20,
+     "better": 0.0,
+     "tie": 0.75,
+     "wrong": 0.25
+    },
+    "judge_variant_first": {
+     "n": 20,
+     "better": 0.0,
+     "tie": 0.75,
+     "wrong": 0.25
+    },
+    "judge_order_consistency": 1.0,
+    "mean_words_clean": 49.7,
+    "mean_words_variant": 59.7
+   }
+  },
+  "by_kind": {
+   "reasoning": {
+    "verifier": {
+     "n": 20,
+     "better": 0.0,
+     "tie": 1.0,
+     "wrong": 0.0
+    },
+    "judge_pooled": {
+     "n": 40,
+     "better": 0.0,
+     "tie": 1.0,
+     "wrong": 0.0
+    }
+   },
+   "outcome": {
+    "verifier": {
+     "n": 40,
+     "better": 1.0,
+     "tie": 0.0,
+     "wrong": 0.0
+    },
+    "judge_pooled": {
+     "n": 80,
+     "better": 0.1375,
+     "tie": 0.8375,
+     "wrong": 0.025
+    }
+   },
+   "style": {
+    "verifier": {
+     "n": 20,
+     "better": 0.0,
+     "tie": 1.0,
+     "wrong": 0.0
+    },
+    "judge_pooled": {
+     "n": 40,
+     "better": 0.0,
+     "tie": 0.75,
+     "wrong": 0.25
+    }
+   }
+  },
+  "S_reason": {
+   "verifier": 0.0,
+   "judge_pooled": 0.0
+  },
+  "S_outcome": {
+   "verifier": 1.0,
+   "judge_pooled": 0.1375
+  }
+ }
+}
