@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 import argparse
+import gc
+import time
+
+import torch
 import pandas as pd
 
-from common.data import load_yaml, repo_path
+from common.data import load_yaml, repo_path, write_jsonl
 from common.generation import batch_generate
 from common.models import load_policy, load_tokenizer
 
@@ -59,13 +63,24 @@ def generate_for_policy(cfg, policy_name: str, batch_size: int = 4):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="configs/feedback.yaml")
+    ap.add_argument("--policy", help="one of sft, dpo, ppo, grpo (default: all)")
+    ap.add_argument("--batch-size", type=int, default=8)
     args = ap.parse_args()
     cfg = load_yaml(args.config)
-    print("Policies:", list(policy_specs(cfg)))
+    outdir = repo_path(cfg["results_dir"]) / "task4_safety"
+    outdir.mkdir(parents=True, exist_ok=True)
     print("XSTest rows:", len(load_xstest(cfg)))
-    raise NotImplementedError(
-        "TODO(student): call generate_for_policy for SFT/DPO/PPO/GRPO, save common deterministic responses, and preserve the fixed prompt order."
-    )
+    for name in ([args.policy] if args.policy else list(policy_specs(cfg))):
+        path = outdir / f"generated_{name}.jsonl"
+        if path.exists():
+            print("skip (exists):", path)
+            continue
+        t0 = time.time()
+        recs = generate_for_policy(cfg, name, batch_size=args.batch_size)
+        write_jsonl(path, recs)
+        print(name, len(recs), "responses in", round(time.time() - t0), "s ->", path)
+        gc.collect()
+        torch.cuda.empty_cache()
 
 
 if __name__ == "__main__":
