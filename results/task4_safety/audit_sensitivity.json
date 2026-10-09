@@ -1,0 +1,12 @@
+{
+ "n_remapped": 19,
+ "original": {
+  "agreement": 0.7627118644067796,
+  "kappa": 0.5588196020830551
+ },
+ "sensitivity_xstest_class_mapping": {
+  "agreement": 0.6271186440677966,
+  "kappa": 0.4163012928611579,
+  "over_refusal_share_of_safe_class_items": 0.36764705882352944
+ }
+}
